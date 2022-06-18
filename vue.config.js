@@ -44,7 +44,9 @@ module.exports = {
     name: name,
     resolve: {
       alias: {
-        '@': resolve('src')
+        '@': resolve('src'),
+        '@fonts': resolve('src/assets/fonts'),
+        '@learn': resolve('src/playground')
       }
     }
   },

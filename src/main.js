@@ -15,6 +15,16 @@ import router from './router'
 import '@/icons' // icon
 import '@/permission' // permission control
 
+import '@/utils/hasPerm' // 自定义指令, 实现权限控制
+
+/**
+ * 权限相关的组件也可以直接注册到全局中, 方便使用
+ * import authButton from '@/components/customComponent/authButton'
+ * import authSlot from '@/components/customComponent/authSlot'
+ * Vue.component('au-button', authButton)
+ * Vue.component('auth-slot', authSlot)
+ */
+
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api

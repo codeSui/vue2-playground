@@ -3,6 +3,32 @@
 @import './transition.scss';
 @import './element-ui.scss';
 @import './sidebar.scss';
+@import './funny.scss';
+
+
+@font-face {
+  font-family: fira;
+  src: url(~@fonts/FiraCode-Regular.ttf);
+}
+@font-face {
+  font-family: bili;
+  src: url(~@fonts/bilibili.ttf);
+}
+
+// * {
+html, h1, div, pre {
+  // font-family: consolas;
+  font-family: fira;
+  color: pink
+}
+
+p {
+  line-height: 1.5;
+}
+
+.container {
+  padding: 2em;
+}
 
 body {
   height: 100%;
@@ -19,6 +45,8 @@ label {
 html {
   height: 100%;
   box-sizing: border-box;
+  background-color: rgb(53, 54, 58);
+  color: pink;
 }
 
 #app {

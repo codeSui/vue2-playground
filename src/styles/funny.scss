@@ -1,0 +1,88 @@
+h2 {
+  font-size: 1.5rem;
+  padding-bottom: .3rem;
+  // vertical-align: bottom;
+  border-bottom: .1em solid transparent;
+  
+  &:hover {
+    border-bottom-color:red
+  }
+    
+  &::before {
+    content: '';
+    color: red;
+    transition: all .7s ease-in-out;
+    vertical-align: bottom;
+    margin-right: .3em;
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    background: url('~@/assets/img/towind.svg');
+  }
+  
+  &:hover:before {
+    color: red;
+    background: url('~@/assets/img/towind-pin.svg');
+    transform: rotate(100deg);
+  }
+}
+span.sp-mark {
+  font-family: 'fira';
+  color: #4981b6;
+  color: rgb(243, 77, 35);
+  // background: rgb(254, 245, 245);
+  // background-color: #2c3b4d;
+  background: rgb(88, 74, 74);
+  padding: 0.25rem 0.35rem;
+  font-size: 0.85em;
+  border-radius: 3px;
+  margin: 0;
+  vertical-align: center;
+  &::before {
+    font-family: bili;
+    color: #eee;
+    margin-right: .2em;
+    content: '\E6E4';
+  }
+}
+s.hl {
+  font-family: 'fira';
+  color: #4981b6;
+  color: rgb(243, 77, 35);
+  // background: rgb(254, 245, 245);
+  // background-color: #2c3b4d;
+  background: rgb(88, 74, 74);
+  padding: 0.20rem 0.35rem;
+  font-size: 0.85em;
+  border-radius: 3px;
+  margin: 0;
+  vertical-align: center;
+  text-decoration: none;
+}
+span + span {
+  margin-left: 1em;
+}
+
+
+
+.h30 { height: 30px; } .h50 { height: 50px; } .h70 { height: 70px; }
+.h150 { height: 150px; }
+.h300 { height: 300px; }  .h70 { height: 70px; }
+
+.w30 { width: 30px; } .w50 { width: 50px; } .w70 { width: 70px; }
+
+
+
+.mg-top30 { margin-top: 30px; }
+.mg-top50 { margin-top: 50px; }
+.mg-top80 { margin-top: 80px; }
+
+
+
+.blu { background-color: blue; }
+.yel { background-color: yellow; }
+.red { background-color: red; }
+
+.bor-red { border: 3px solid red; }
+.bor-yel { border: 3px solid yellow; }
+.bor-blu { border: 3px solid blue; }
