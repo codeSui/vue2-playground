@@ -1,0 +1,84 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Document</title><style>
+
+html,body{background-color: rgb(49, 47, 44);color:pink;}
+
+.h30 { margin: 100px 0; height: 30px; border: 2px solid yellow; }
+
+.tip { position:relative;top:20px; }
+
+.prac {
+  height: 100px;
+  width: 300px;
+  margin: 20px 0;
+  border: 2px solid red;
+}
+.follow {
+  height: 100px;
+  width: 300px;
+  margin: -15px 0 25px;
+  border: 2px solid beige;
+}
+
+</style></head><body>
+  <span class="tip">white-space:pre-line;</span>
+  <div class="prac" style="white-space:pre-line;">&lt;\n&gt;
+    pre-line允许自动换行, 回车符保留, 空格会压缩&lt;\n&gt;
+    文本本省略号End&lt;\n&gt;
+    K     K空格会压缩&lt;\n&gt;
+  </div>
+
+  <span class="tip">white-space:pre-wrap;</span>
+  <div class="prac" style="white-space:pre-wrap;">&lt;\n&gt;
+    pre-wrap允许自动换行, 回车符保留, 空格也保留&lt;\n&gt;
+    文略号End&lt;\n&gt;
+    K     K空格不会压缩&lt;\n&gt;
+  </div>
+
+  <span class="tip">white-space:pre</span>
+  <div class="prac" style="white-space:pre;">&lt;\n&gt;
+    pre完整保留, 不允许自动换行, 保留空格和换行&lt;\n&gt;
+    文本省略号文本省略号文本省略号文本省略号文本省略号文本省略号文本省略号End&lt;\n&gt;
+    K     K空格不会压缩&lt;\n&gt;
+  </div>
+  
+  <span class="tip">white-space:no-wrap</span>
+  <div class="prac" style="white-space:nowrap;">&lt;\n&gt;
+    pre完整保留, 不允许自动换行, 保留空格和换行&lt;\n&gt;
+    文本省略号文本省略号文本省略号文本省略号文本省略号文本省略号文本省略号End&lt;\n&gt;
+    K     K空格不会压缩&lt;\n&gt;
+  </div>
+  
+  <span class="tip">white-space:normal;</span>
+  <div class="prac" style="white-space:normal;">&lt;\n&gt;
+    pre完整保留, 不允许自动换行, 保留空格和换行&lt;\n&gt;
+    文本省略号文本省略号文本省略号文本省略号文本省略号文本省略号文本省略号End&lt;\n&gt;
+    K     K空格不会压缩&lt;\n&gt;
+  </div>
+
+  <span class="tip">word-wrap: break-word;如果当前行空间不够, 到下一行</span>
+  <div class="prac" style="word-wrap: break-word;">&lt;\n&gt;
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakk
+    aaaaaaaaaaaaaaaaaaakk-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  </div>
+
+  <span class="tip">word-break: break-all;仅仅当作字符</span>
+  <div class="prac" style="word-break: break-all;">&lt;\n&gt;
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  </div>
+
+  <span class="tip">word-break: keep-all;对 CJK文本:中日韩统一表意文字 有效</span>
+  <div class="prac" style="word-break: keep-all;">&lt;\n&gt;
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  </div>
+  <div class="follow" style="word-break: keep-all;">&lt;\n&gt;
+    文本省略号文本省略号文本省略号文本省略号文本省略号文本省略号文本省略号 文本省略号文本省略号文本省略号文本省略号 文本省略号文本省略号文本省略号 
+  </div>
+
+  <div class="prac" style="word-break: normal;">&lt;\n&gt;
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  </div>
+
+
+
+<script>
+</script></body></html>

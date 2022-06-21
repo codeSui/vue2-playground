@@ -18,6 +18,8 @@
     <h2>
       实际项目中按钮的出现频率会更高一些, 为此可以单独定义权限按钮组件:authButton
     </h2>
+    <el-button @click="UpdAuthKey">UpdAuthKey</el-button>
+
     <ul>
       <li>没有权限就禁用
         <auth-button size="mini" auth="func_btn_show_" @click="handleClick">
@@ -25,8 +27,9 @@
         </auth-button>
       </li>
       <li>没有权限且设置 &lt;dontShow&gt; 则取消显示
-        <auth-button auth="func_btn_show_" :dont-show="true" @click="handleClick">
+        <auth-button :auth="localAuthKey" :dont-show="true" @click="handleClick">
           auth-button 如果没有权限就取消显示
+          <!-- {{ updCompContent }} -->
         </auth-button>
       </li>
       <li>存在权限
@@ -48,6 +51,8 @@
       </li>
     </ul>
 
+    <hr><hr>
+
   </div>
 </template>
 
@@ -63,13 +68,13 @@ export default {
 
   data() {
     return {
+      localAuthKey: 'func_btn_show_',
+      updCompContent: 'change the detail',
       exampleData: {
         dept: '工艺部',
         post: '部长'
       },
       strategy_SameDept: (data, CUR) => {
-        console.log('data.dept: ', data.dept)
-        console.log('CUR.dept: ', CUR.dept)
         return data.dept === CUR.dept
       },
       strategy_FromManagement: (data, CUR) => {
@@ -83,6 +88,14 @@ export default {
   methods: {
     handleClick() {
       console.log('have been authorized')
+    },
+    UpdAuthKey() {
+      const key = this.localAuthKey
+      if (key.lastIndexOf('_') === key.length - 1) {
+        this.localAuthKey = 'func_btn_show'
+      } else {
+        this.localAuthKey = 'func_btn_show_'
+      }
     }
 
   }

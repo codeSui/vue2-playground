@@ -66,23 +66,42 @@ span + span {
 
 
 .h30 { height: 30px; } .h50 { height: 50px; } .h70 { height: 70px; }
+.h100 { height: 100px; }
 .h150 { height: 150px; }
 .h300 { height: 300px; }  .h70 { height: 70px; }
 
 .w30 { width: 30px; } .w50 { width: 50px; } .w70 { width: 70px; }
+.w100 { width: 100px; }
+.w200 { width: 200px; }
+.w300 { width: 300px; }
 
+.hw150 { height: 150px; width: 150px; }
+.hw300 { height: 300px; width: 300px; }
+
+.hw50 { height: 50px; width: 50px; }
+.hw30 { height: 30px; width: 30px; }
 
 
 .mg-top30 { margin-top: 30px; }
 .mg-top50 { margin-top: 50px; }
 .mg-top80 { margin-top: 80px; }
-
+.mg-tb30 { margin-top: 30px; margin-bottom: 30px; }
+.mg-tb20 { margin-top: 20px; margin-bottom: 20px; }
 
 
 .blu { background-color: blue; }
 .yel { background-color: yellow; }
 .red { background-color: red; }
+.pin { background-color: pink; }
+.bei { background-color: beige; }
 
 .bor-red { border: 3px solid red; }
 .bor-yel { border: 3px solid yellow; }
 .bor-blu { border: 3px solid blue; }
+
+
+.po-rel { position: relative; }
+.po-abs { position: absolute; }
+
+
+.blk-inline { display: inline-block; }

@@ -1,4 +1,5 @@
 import Vue from 'vue'
+
 import Router from 'vue-router'
 
 Vue.use(Router)
@@ -47,6 +48,18 @@ export const constantRoutes = [
         name: 'auth',
         component: () => import('@/views/show/authControl'),
         meta: { title: 'auth control', icon: 'dashboard' }
+      },
+      {
+        path: 'directive',
+        name: 'directive',
+        component: () => import('@/views/show/clicktoCopy'),
+        meta: { title: 'directive', icon: 'dashboard' }
+      },
+      {
+        path: 'marginBar',
+        name: 'marginBar',
+        component: () => import('@/views/show/marginBar'),
+        meta: { title: 'marginBar', icon: 'dashboard' }
       }
     ]
   },

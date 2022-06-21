@@ -15,7 +15,10 @@ import router from './router'
 import '@/icons' // icon
 import '@/permission' // permission control
 
-import '@/utils/hasPerm' // 自定义指令, 实现权限控制
+// import '@/directives/hasPerm' // 自定义指令, 实现权限控制
+
+import Directives from '@/directives'
+Vue.use(Directives)
 
 /**
  * 权限相关的组件也可以直接注册到全局中, 方便使用

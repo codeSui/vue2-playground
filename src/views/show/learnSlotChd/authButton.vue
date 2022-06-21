@@ -45,12 +45,12 @@ export default {
     if (this.cusStrategy) {
       // 开启一个宏任务, 在 <自定义指令>决策完权限 之后执行
       setTimeout(() => {
-        console.log('=======>')
+        // console.log('=======>')
         const CUR = { dept: this.CUR_dept, post: this.CUR_post }
         // 符合策略的话就启用, 所以设置禁用为 false
         this.disabled = !this.cusStrategy(this.$attrs.data, CUR)
-        console.log(`自定义权限策略的结果: ${this.disabled ? '禁用' : '启用'}`)
-        console.log('<=======')
+        // console.log(`自定义权限策略的结果: ${this.disabled ? '禁用' : '启用'}`)
+        // console.log('<=======')
       })
     }
   },
