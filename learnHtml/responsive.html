@@ -1,0 +1,86 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Document</title><style>
+
+* {  margin: 0; }
+
+html,body{ background-color: rgb(49, 47, 44);color:pink;}
+
+.base-box { width: 1rem; height: 1rem; background-color: red; font-size: 1rem;}
+
+
+</style></head><body>
+  
+  
+  <div class="base-box">Moo</div>
+  
+  <script>
+
+
+/* 
+
+750 设计稿
+750px <=> 100vw
+
+当窗口宽度为 750px 的时候, 1vw = 7.5px, 1px = 0.133333vw
+
+我们选择基准为 1rem = baseRoot = 100px = 100*0.13333vw = 13.333vw
+假设设计稿上有一个 盒子<100px*100px> 
+那么用 rem 单位来表示就是 盒子<1rem*1rem>
+
+rem 由 <1.基准> 和 <2.设计稿宽度> 决定
+*/
+// 节流, 一个间隔时间内仅相应一次
+
+function showInfo (info) {
+  var p = document.createElement("p")
+  p.style.padding = '30px'
+  p.innerText = info
+  document.body.appendChild(p)
+}
+
+let fontSize = 0
+const desi = 750 // 设计稿宽度
+const baseRoot = 100 // 基准, .base-box { width: 1rem; height: 1rem; } => 100px*100px
+
+function rem_vw () {
+  fontSize = ( baseRoot*100 ) / desi
+  document.documentElement.style.fontSize = fontSize+'vw'
+}
+
+function rem_cal () {
+  const cur = document.documentElement.clientWidth
+  const Ratio = cur / desi
+  fontSize = Ratio * baseRoot
+  document.documentElement.style.fontSize = fontSize+'px'
+}
+
+
+function throttle (fn, delay=500) {
+  let timer, preTime
+  return function () {
+    const _args = arguments
+    const nowTime = Date.now()
+    const remain = delay - (nowTime-preTime)
+    if(remain <= 0) {
+      preTime = nowTime
+      fn.apply(this, _args)
+    } else if(!timer) {
+      timer = setTimeout(() => {
+        preTime = Date.now()
+        fn.apply(this, _args)
+        clearTimeout(timer)
+      }, remain);
+    }
+  }
+}
+
+/* method00 手动计算基准 */
+// window.addEventListener('resize', throttle(rem_cal, 10));
+// rem_cal()
+
+/* method01 vw */
+rem_vw()
+
+
+showInfo(fontSize)
+
+</script></body></html>
